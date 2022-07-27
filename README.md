@@ -38,10 +38,11 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution here](https://github.com/PhoenixDev22/rating-component-main)
+- Live Site URL: [live site here](https://rating-component-phoenixdev22.netlify.app/)
 
 ## My process
+
 When you want to collect feedback on a website, having a widget embedded on your site is the most effective way to go about it.
 
 ### Built with
@@ -49,7 +50,6 @@ When you want to collect feedback on a website, having a widget embedded on your
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - JavaScript
 - SweetAlert 
