@@ -8,13 +8,7 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -43,8 +37,6 @@ Users should be able to:
 
 ## My process
 
-When you want to collect feedback on a website, having a widget embedded on your site is the most effective way to go about it.
-
 ### Built with
 
 - Semantic HTML5 markup
@@ -56,4 +48,3 @@ When you want to collect feedback on a website, having a widget embedded on your
 
 
 
-### What I learned
