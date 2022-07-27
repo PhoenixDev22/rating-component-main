@@ -393,7 +393,8 @@ body {
   height: 100%;
   z-index: 1;
   border-radius: 1rem;
-  background-color: hsl(213deg, 19%, 18%);
+  background: -o-radial-gradient(top, circle, hsl(215deg, 20%, 17%), hsl(216deg, 18%, 12%));
+  background: radial-gradient(circle at top, hsl(215deg, 20%, 17%), hsl(216deg, 18%, 12%));
   -webkit-transition: -webkit-transform 0.6s ease-in-out;
   transition: -webkit-transform 0.6s ease-in-out;
   -o-transition: transform 0.6s ease-in-out;

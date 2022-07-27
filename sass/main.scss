@@ -94,7 +94,7 @@ body{
     height: 100%;
     z-index: 1;
     border-radius: $br-primary;
-    background-color:nested-map-get($colors, "neutral", "dark-blue" );
+    background: radial-gradient(circle at top,hsl(215,20%,17%),hsl(216,18%,12%));
     transition: transform .6s ease-in-out;
 }
 .face-1{
