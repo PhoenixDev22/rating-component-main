@@ -1,0 +1,408 @@
+@use 'resets';
+$colors:(
+    "primary":(
+        "orange": hsl(25, 97%, 53%),
+    ), 
+    "neutral":(
+        "white": hsl(0, 0%, 100%),
+        "light-grey": hsl(217, 12%, 63%),
+        "medium-grey": hsl(216, 12%, 54%),
+        "dark-blue": hsl(213, 19%, 18%),
+        "very-dark-blue":hsl(216, 12%, 8%)
+    )
+);
+
+$font-weights:(
+    "regular": 400,
+    "bold": 700
+);
+
+$ff-primary:'Overpass', sans-serif;
+$br-primary: 1rem;
+
+@function nested-map-get($map, $keys...){
+    @each $key in $keys{
+        $map: map-get($map, $key);
+    };
+    @return $map;
+}
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+:focus-visible{
+    outline: .3em dashed nested-map-get($colors, "primary", "orange" );
+    outline-offset: .3em;
+}
+html{
+    font-size: 100%;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+input[type=radio]{
+    cursor: pointer;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+body{
+    padding: 0 1.5rem;
+    min-height: 100vh;
+    font-family: $ff-primary;
+    @include flex($direction:column, $justify:center, $align: center);
+    background-color:nested-map-get($colors, "neutral", "very-dark-blue" )
+    
+}
+.component{
+    padding: 1.5rem 1.5rem 1.875rem;
+    position: relative;
+    width: 20.625rem;
+    height: 22.5rem;
+}
+.face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    height: 100%;
+    z-index: 1;
+    border-radius: $br-primary;
+    background-color:nested-map-get($colors, "neutral", "dark-blue" );
+    transition: transform .6s ease-in-out;
+}
+.face-1{
+    gap: 1.25rem;
+    transform: scale(0);
+    transform-origin: right bottom;
+    @include flex($direction:column, $justify:flex-start, $align: flex-start);
+}
+.face-1.active{
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+    animation: animation1  2s ease-in-out;
+    transition: transform .6s ease-in-out, opacity .3s ease-in-out;
+}
+.img{
+    display: flex;
+    padding: .9rem;
+    background-color: hsl(216deg 15% 24%);
+    border-radius: 50%;
+}
+.sub-title{
+    font-size: 1.188rem;
+    font-weight: map-get($font-weights, "bold");
+    color: nested-map-get($colors, "neutral", "white")
+}
+.description{
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.625rem;
+    color: nested-map-get($colors, "neutral", "light-grey");
+}
+input[type=radio]{
+    appearance: unset;
+}
+.form{
+    @include flex($direction:column, $justify:flex-start, $align: center);
+    gap: 1.5rem;
+    width: 100%;
+}
+.inputs{
+    width: 100%;
+    @include flex($direction:row, $justify:space-between, $align: center);
+}
+.radio{
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: hsl(216deg 15% 24%);
+    border-radius: 50%;
+    color: nested-map-get($colors, "neutral", "white");
+    transition: .4s ease-in-out;
+    position: relative;
+    &:hover{
+        background-color: nested-map-get($colors, "neutral", "medium-grey");
+    }
+    &.active{
+        background-color: nested-map-get($colors, "primary", "orange");
+    }
+    &:focus-visible{
+        outline: .3em dashed nested-map-get($colors, "primary", "orange" );
+        outline-offset: .3em;
+    }
+   
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 1rem;
+        @include flex($direction:row, $justify:center, $align: center);
+    }
+    &:first-of-type:before{
+        content: '1';
+    }
+    &:nth-of-type(2):before{
+        content: '2';
+    }
+    &:nth-of-type(3):before{
+        content: '3';
+    }
+
+    &:nth-of-type(4):before{
+        content: '4';
+    }
+    &:last-child:before{
+        content: '5';
+    } 
+}
+.submit-btn{
+    text-transform: uppercase;
+    color: nested-map-get($colors, "neutral", "white");
+    letter-spacing: 0.125em;
+    border-radius: 1.875rem;
+    width: 100%;
+    font-size: 0.813rem;
+    background-color: nested-map-get($colors, "primary","orange" );
+    padding: .9rem;
+    font-weight: map-get($font-weights, "bold");
+    position: relative;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+    &:hover{
+        background-color: nested-map-get($colors,"neutral", "white" );
+        color: nested-map-get($colors,"primary", "orange" );
+        box-shadow: 0px 5px 15px rgba(0,0,0,.4)
+    }   
+    &:focus-visible{
+        outline: .3em dashed nested-map-get($colors, "primary", "orange" );
+        outline-offset: .3em;
+    }
+    .ripple{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background-color: nested-map-get($colors,"primary", "orange" );
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: .5;
+        animation: effect-ripple 700ms;
+    }
+}
+@keyframes effect-ripple{
+    100%{
+        width: 12rem;
+        height: 12rem;
+        opacity: 0;
+    }
+}
+.face-2{
+    opacity: 0;
+    gap: 1.5rem;
+    transform: scale(0);
+    transform-origin: left top;
+    transition: transform .6s ease-in-out;
+    @include flex($direction:column, $justify:flex-start, $align: center);
+    .thank-img{
+        width: 9.063rem;
+        height: 5.625rem;
+    }
+    .sub-title{
+        background-color: hsl(216deg 15% 24%);
+        padding: .5rem .9rem;
+        color: nested-map-get($colors, "primary", "orange");
+        font-size: 0.875rem;
+        font-weight: map-get($font-weights, "bold");
+        border-radius: 1.25rem;
+        margin-bottom: 0.625rem;
+    }
+    .thank-msg{
+        font-size: 1.75rem;
+        color: nested-map-get($colors, "neutral", "white");
+        font-weight: map-get($font-weights, "bold");
+    }
+    .description{
+        text-align: center;   
+    }
+    &.active{
+        opacity: 1;
+        z-index: 2;
+        transform: scale(1);
+        transition: transform .6s ease-in-out .2s;
+    }
+}
+@media screen and (min-width: 48em){
+    .component{
+        width: 25rem;
+        height: 25.625rem; 
+    }
+    .face{
+        padding: 2rem 2.5rem 2rem 2rem;
+    }
+    .img{
+        padding: 1rem;  
+    }
+    .face-1{
+        .sub-title{
+            font-size: 1.75rem;
+        }
+    }
+    .radio{
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .submit-btn{
+        font-size: 1rem;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    .face-2{
+        .thank-img{
+            width: 10rem;
+            height: 6.75rem;
+        }
+    }
+    .thank-msg{
+        font-size: 1.75rem;
+    }
+}
+
+// The sewwt alert pop up message styles
+.swal-overlay {
+  background-color: rgba(255,255,255,.15)
+}
+.swal-button {
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    color: nested-map-get($colors, "neutral", "white");
+    letter-spacing: 0.125em;
+    border-radius: 1.875rem;
+    width: 100%;
+    font-size: .875rem;
+    background-color:nested-map-get($colors, "primary", "orange" );
+    padding: .7rem 1.1rem;
+    font-family: $ff-primary;
+    font-weight: map-get($font-weights, "bold");
+   box-shadow: none;
+    &:focus-visible{
+        outline: .3em dashed nested-map-get($colors, "primary", "orange" );
+        outline-offset: .3em;
+    }
+}
+.swal-button:not([disabled]):hover {
+    background-color: nested-map-get($colors,"neutral", "white" );
+    color: nested-map-get($colors,"primary", "orange" );
+}
+.swal-modal {
+    background-color:nested-map-get($colors, "neutral", "dark-blue" );
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+}
+.swal-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-family: $ff-primary;
+    color: nested-map-get($colors, "neutral", "white");
+}
+.swal-icon--warning {
+    border: 0.125em solid nested-map-get($colors,"primary", "orange" );
+    animation: none;
+}
+.swal-icon--warning__body {
+    width: 0.125rem;
+    height: 0.75rem;
+    border-radius: 0.125rem;
+    margin-left: -0.125rem;
+    background-color:nested-map-get($colors, "primary", "orange" );
+}
+.swal-icon--warning__dot {
+    width: 0.188rem;
+    height: 0.188rem;
+    margin-left: -0.063rem;
+    bottom: -0.438rem;
+    background-color: nested-map-get($colors, "primary", "orange" );
+}
+.swal-icon:first-child {
+    margin-top: 1.25rem; 
+}
+.swal-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 2px;
+}
+
+// The attribution syles
+.attribution{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;    
+}
+.link{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    position: relative;
+    z-index: 3;
+    transition: .25s ease-in-out;
+    &:focus{
+    outline: .2em dashed nested-map-get($colors, "primary", "orange");
+    outline-offset: .5em;
+    }
+}
+.attribution img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.link::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+    border-radius: 50%;
+    background: 0;
+    z-index: -1;
+    background: nested-map-get($colors, "primary", "orange");
+    transition: .25s ease-in-out;
+}
+.link:hover.link{
+    transform: scale(1.07); 
+}
