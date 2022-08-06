@@ -48,20 +48,6 @@ Users should be able to:
 
 
 
-### What I learned
-
--The pageY : read-only property of the MouseEvent returns the Y coordinate in pixels relative to  the whole documnet
-
-
-- After I have used SweetAlert library(first time used), I found it would be better if i didn't use it.
-
-### Continued development
-
-
-### Useful resources
-
-
-
 
 ## Author
 
