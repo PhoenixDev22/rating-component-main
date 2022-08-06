@@ -73,7 +73,7 @@ img{
     white-space: nowrap !important;
 }
 body{
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     min-height: 100vh;
     font-family: $ff-primary;
     @include flex($direction:column, $justify:center, $align: center);

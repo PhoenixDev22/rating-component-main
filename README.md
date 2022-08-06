@@ -8,13 +8,7 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -27,7 +21,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
-
+- Adding a pop up message using sweet alert, when the user submitted the feedback and did not select a rating.
 ### Screenshot
 
 ![](./images/Web%20capture_27-7-2022_144050_127.0.0.1.jpeg)
@@ -38,18 +32,16 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution here](https://github.com/PhoenixDev22/rating-component-main)
+- Live Site URL: [live site here](https://rating-component-phoenixdev22.netlify.app/)
 
 ## My process
-When you want to collect feedback on a website, having a widget embedded on your site is the most effective way to go about it.
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - JavaScript
 - SweetAlert 
@@ -79,10 +71,3 @@ When you want to collect feedback on a website, having a widget embedded on your
 
 
 
-Hello community , 
-I have completed another frontend mentor challenge. For sure , I've learnt few new things.
-I have added a pop up message using sweet alert, it appears when you submit the form and you didn't select any rating. 
-
-I would be happy , if you see something has to be improved , please don't hesitate and leave a feedback.
-
-Thanks in advance.
