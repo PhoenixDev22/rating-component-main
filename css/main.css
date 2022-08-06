@@ -352,7 +352,7 @@ img {
 }
 
 body {
-  padding: 0 1rem;
+  padding: 0 1.1rem;
   min-height: 100vh;
   font-family: "Overpass", sans-serif;
   display: -webkit-box;
