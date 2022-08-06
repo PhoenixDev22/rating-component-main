@@ -79,3 +79,10 @@ When you want to collect feedback on a website, having a widget embedded on your
 
 
 
+Hello community , 
+I have completed another frontend mentor challenge. For sure , I've learnt few new things.
+I have added a pop up message using sweet alert, it appears when you submit the form and you didn't select any rating. 
+
+I would be happy , if you see something has to be improved , please don't hesitate and leave a feedback.
+
+Thanks in advance.
